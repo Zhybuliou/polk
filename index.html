@@ -32,13 +32,13 @@
         </div>
     </header>
     
-    <div id="hero-form" class="hero-form">
+    <div id="hero-form-section" class="hero-form">
         <!-- Заголовок формы, выровненный по центру -->
         <h2 class="hero-form__title">Форма анкеты героя</h2>
       
         <!-- Обёртка формы на белом фоне -->
         <div class="hero-form__container">
-          <form class="hero-form__form" action="#" method="post">
+          <form id="hero-form" class="hero-form__form" action="#" method="post">
             
             <!-- Поле: Загрузите одну фотографию -->
             <div class="hero-form__field-image">
@@ -122,7 +122,7 @@
     </div>
 
     <div id="modal-content" class="modal-content" style="display: none;">
-        <button class="button-back" onclick="Fancybox.close()">
+        <button id="button-back" class="button-back">
             <img src="./assets/arrow-up-right.svg" alt="назад">
             Назад
         </button>
@@ -134,7 +134,7 @@
             </div>
         </div>
         <p id="modal-rank" class="modal-rank"></p>
-        <h3 id="modal-name" class="modal-name"></h3>
+        <p id="modal-name" class="modal-name"></p>
         <p id="modal-date" class="modal-date"></p>
         <p id="modal-relative" class="modal-relative"></p>
         <p id="modal-sender" class="modal-sender"></p>
@@ -142,7 +142,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>

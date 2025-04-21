@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
 
-/* reset.css */ 
-*, 
-*::before, 
-*::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -15,42 +14,29 @@
     --color-primary: #F7F5EF;
     --color-secondary: #C1001F;
     --color-white: #FFFFFF;
-    --color-text: #333333;
+    --color-text: #222222;
 
     /* Семейство шрифтов */
-  --font-family-base: 'Golos Text', sans-serif;
-  --font-family-heading: 'Oswald', sans-serif;
+    --font-family-base: 'Golos Text', sans-serif;
+    --font-family-heading: 'Oswald', sans-serif;
 
-  /* Размеры шрифтов */
-  --font-size-base: 16px;
-  --font-size-h1: 66px;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.75rem;
+    /* Размеры шрифтов */
+    --font-size-sm: 14px;
+    --font-size-description: 15px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-h1: 66px;
 
-  /* Межстрочный интервал */
-  --line-height-base: 1.5;
-  --line-height-heading: 1.2;
+    /* Вес шрифта */
+    --font-weight-normal: 400;
+    --font-weight-semi-medium: 500;
+    --font-weight-medium: 600;
+    --font-weight-bold: 700;
 
-  /* Вес шрифта */
-  --font-weight-normal: 400;
-  --font-weight-medium: 600;
-  --font-weight-bold: 700;
-    
-    /* Отступы */
-    --spacing-sm: 12px;
-    --spacing-md: 40px;
-    --spacing-lg: 75px;
-    
-    /* Бордеры */
-    --border-radius-button: 12px;
-    --border-radius-md: 20px;
-    --border-radius-lg: 30px;
-    
     /* Контейнер */
     --main-layout-min-width: 1200px;
     --main-layout-max-width: 1920px;
-    
-  }
+}
 
 body {
     background-image: url("assets/mask-bg.svg");
@@ -70,15 +56,15 @@ body {
 .page-header {
     height: 152px;
     background-color: var(--color-white);
-    border-bottom-right-radius: var(--border-radius-md);
-    border-bottom-left-radius: var(--border-radius-md);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .page-header__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: 12px 75px;
 }
 
 .page-header__logo-img {
@@ -103,7 +89,7 @@ body {
     color: var(--color-white);
     background-color: var(--color-secondary);
     border: none;
-    border-radius: var(--border-radius-button);
+    border-radius: 12px;
 }
 
 .page-header__btn--gallery {
@@ -118,9 +104,9 @@ body {
 }
 
 .hero-form__container {
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-md);
+    padding: 40px;
     background-color: var(--color-white);
+    border-radius: 30px;
 }
 
 .hero-form__title {
@@ -147,16 +133,16 @@ body {
 .hero-form__field:nth-child(2),
 .hero-form__field:nth-child(3),
 .hero-form__field:nth-child(4) {
-  grid-column: span 2;
+    grid-column: span 2;
 }
 
 .hero-form__field:nth-child(5),
 .hero-form__field:nth-child(6) {
-  grid-column: span 3;
+    grid-column: span 3;
 }
 
 .hero-form__field:nth-child(7) {
-    grid-column: span 6; 
+    grid-column: span 6;
     width: 100%;
 }
 
@@ -168,7 +154,7 @@ body {
 
 .hero-form__label {
     font-family: var(--font-family-base);
-    font-size: 15px;
+    font-size: var(--font-size-description);
 }
 
 .hero-form__input-image {
@@ -177,7 +163,7 @@ body {
 
 .hero-form__label-image-text {
     font-family: var(--font-family-base);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-medium);
 }
 
@@ -224,7 +210,8 @@ body {
     border-radius: 10px;
     outline: none;
 }
-.hero-form__input::placeholder{
+
+.hero-form__input::placeholder {
     opacity: 20%;
 }
 
@@ -270,7 +257,8 @@ body {
     width: 260px;
     height: 389px;
 }
-.hero-card__image-wrapper{
+
+.hero-card__image-wrapper {
     height: 300px;
     overflow: hidden;
     border-radius: 20px;
@@ -286,7 +274,7 @@ body {
 
 .hero-card__likes {
     font-family: var(--font-family-base);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     position: absolute;
     right: 10px;
@@ -300,25 +288,31 @@ body {
     cursor: pointer;
     background-color: var(--color-white);
     border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+.hero-card__likes:active,
 .hero-card__likes:hover {
     color: var(--color-white);
     background-color: var(--color-secondary);
 }
 
+.hero-card__likes,
+.hero-card__icon {
+    user-select: none !important; 
+}
+
 
 .hero-card__name {
     font-family: var(--font-family-base);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
     padding-top: 20px;
 }
 
 .hero-card__sender {
     font-family: var(--font-family-base);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-normal);
     padding-top: 8px;
 }
@@ -328,7 +322,7 @@ body {
     padding: 32px;
     border-radius: 30px;
     margin-top: 130px;
-  }
+}
 
 .modal__image-wrapper {
     position: relative;
@@ -349,7 +343,7 @@ body {
 
 .modal-image__likes {
     font-family: var(--font-family-base);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     position: absolute;
     left: 16px;
@@ -360,15 +354,9 @@ body {
     min-width: 65px;
     height: 36px;
     padding: 4px;
-    cursor: pointer;
     background-color: var(--color-white);
     border-radius: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.modal-image__likes:hover {
-    color: var(--color-white);
-    background-color: var(--color-secondary);
 }
 
 .carousel__button {
@@ -377,8 +365,8 @@ body {
 
 .button-back {
     font-family: var(--font-family-base);
-    font-size: 18px;
-    font-weight: 500;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semi-medium);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -388,14 +376,14 @@ body {
     color: var(--color-secondary);
     border: none;
     border-radius: 12px;
-    outline: none !important; 
+    outline: none !important;
     cursor: pointer;
 }
 
 .modal-rank {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-normal);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     padding-top: 20px;
     padding-bottom: 8px;
     color: var(--color-secondary);
@@ -404,14 +392,14 @@ body {
 .modal-name {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-bold);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     color: var(--color-text)
 }
 
 .modal-date {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-normal);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     padding: 8px 0;
     color: var(--color-text)
 }
@@ -419,14 +407,14 @@ body {
 .modal-relative {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-normal);
-    font-size: 15px;
+    font-size: var(--font-size-description);
     color: var(--color-text)
 }
 
 .modal-sender {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-normal);
-    font-size: 15px;
+    font-size: var(--font-size-description);
     padding: 6px 0 8px 0;
     color: var(--color-text)
 }
@@ -434,7 +422,7 @@ body {
 .modal-description {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-normal);
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }
 
 .fancybox__backdrop {
@@ -442,13 +430,13 @@ body {
 }
 
 .upload-status {
-    font-size: 16px;
+    font-size: var(--font-size-sm);
     margin-top: 10px;
     color: green;
 }
-  
+
 select {
-    appearance: none; /* Убирает стандартную стрелку */
+    appearance: none;
     background: url('./assets/Vector.svg') no-repeat right 15px center;
     background-size: 16px;
 }
@@ -456,7 +444,7 @@ select {
 .hero-form__error-message {
     font-family: var(--font-family-base);
     font-weight: var(--font-weight-normal);
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     visibility: hidden;
     color: var(--color-secondary);
 }
