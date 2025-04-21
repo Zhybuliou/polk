@@ -231,3 +231,47 @@ dropArea.addEventListener("drop", function(e){
   uploadImage();
   dropArea.classList.remove("dragover"); // Убираем класс
 })
+
+
+const buttonSubmit = document.getElementById("hero-submit");
+
+buttonSubmit.addEventListener('click', (e) => {
+  e.preventDefault(); // Предотвращаем стандартное поведение формы
+
+  const form = document.querySelector('.hero-form__form');
+  const fields = form.querySelectorAll('input, textarea, select');
+  let isValid = true;
+  const formData = {};
+
+  fields.forEach((field) => {
+    const label = field.closest('.hero-form__field') || field.closest('.hero-form__field-image');
+    const errorElement = label.querySelector('.hero-form__error-message'); 
+
+    if (!field.value.trim()) {
+      // Показываем сообщение об ошибке
+      if (errorElement) {
+        errorElement.style.visibility = 'visible';
+        errorElement.textContent = 'Поле обязательно для заполнения'; // Устанавливаем текст ошибки
+      }
+      isValid = false;
+    } else {
+      // Скрываем сообщение об ошибке и собираем данные
+      if (errorElement) {
+        errorElement.style.visibility = 'hidden';
+      }
+      formData[field.id] = field.value.trim();
+    }
+
+    // Скрываем ошибку при вводе в поле
+    field.addEventListener('input', () => {
+      if (errorElement) {
+        errorElement.style.visibility = 'hidden';
+      }
+    });
+  });
+
+  if (isValid) {
+    console.log(JSON.stringify(formData)); // JSON-объект
+    alert(formData);
+  }
+});

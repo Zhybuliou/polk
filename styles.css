@@ -136,7 +136,7 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
-    gap: 32px;
+    gap: 15px;
     column-gap: 20px;
 }
 
@@ -446,10 +446,6 @@ body {
     margin-top: 10px;
     color: green;
 }
-
-.hero-form__input-image:invalid {
-    border: 2px solid var(--color-secondary); /* Показать красную границу при ошибке */
-}
   
 select {
     appearance: none; /* Убирает стандартную стрелку */
@@ -457,15 +453,10 @@ select {
     background-size: 16px;
 }
 
-#drop-zone {
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  #drop-zone.dragover {
-    background-color: #e0f7fa; /* Светлый фон при наведении */
-    border-color: #0077ff;
-  }
+.hero-form__error-message {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-normal);
+    font-size: 14px;
+    visibility: hidden;
+    color: var(--color-secondary);
+}

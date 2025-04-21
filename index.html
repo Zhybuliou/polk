@@ -48,24 +48,28 @@
                 <p class="hero-form__label-image__text" id="upload-status">Перенесите файл сюда<br> или выберите файл с вашего устройства</p>
               </label>
               <input type="file" id="hero-photo" class="hero-form__input-image" accept="image/*">
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Поле: ФИО героя -->
             <div class="hero-form__field">
               <label class="hero-form__label" for="hero-name">ФИО героя</label>
               <input type="text" id="hero-name" class="hero-form__input" placeholder="Исаев">
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Поле: Годы жизни -->
             <div class="hero-form__field">
               <label class="hero-form__label" for="hero-life">Годы жизни</label>
               <input type="text" id="hero-life" class="hero-form__input" placeholder="1111-1111">
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Поле: Звание -->
             <div class="hero-form__field">
               <label class="hero-form__label" for="hero-rank">Звание</label>
               <input type="text" id="hero-rank" class="hero-form__input">
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Поле: Степень родства отправителю -->
@@ -82,18 +86,21 @@
                 <option value="Прадедушка">Прадедушка</option>
                 <option value="Прабабушка">Прабабушка</option>
               </select>
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Поле: Отправитель -->
             <div class="hero-form__field">
               <label class="hero-form__label" for="hero-sender">Отправитель</label>
               <input type="text" id="hero-sender" class="hero-form__input">
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Поле: Описание -->
             <div class="hero-form__field">
               <label class="hero-form__label" for="hero-description">Описание</label>
               <textarea id="hero-description" class="hero-form__textarea" maxlength="1000"></textarea>
+              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
             </div>
             
             <!-- Нижняя область формы с информационным текстом и кнопкой -->
@@ -102,7 +109,7 @@
                 Нажимая на кнопку “Добавить героя” я соглашаюсь с политикой обработки данных и 
                 <a href="#" class="hero-form__link">политикой конфиденциальности</a>
               </p>
-              <button type="submit" class="button hero-form__button">Добавить героя</button>
+              <button type="submit" id="hero-submit" class="button hero-form__button">Добавить героя</button>
             </div>
             
           </form>
