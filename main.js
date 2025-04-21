@@ -56,7 +56,7 @@ const heroes = [
   },
   {
     "id": 6,
-    "image": "/assets/hero.png",
+    "image": "assets/hero.png",
     "likeNumber": 1700,
     "rank": "Заместитель командира эскадрильи",
     "heroName": "Маресьев Алексей Петрович",
@@ -67,7 +67,7 @@ const heroes = [
   },
   {
     "id": 7,
-    "image": "/assets/hero.png",
+    "image": "assets/hero.png",
     "likeNumber": 99,
     "rank": "Командир авиаполка",
     "heroName": "Гризодубова Валентина Степановна",
@@ -78,7 +78,7 @@ const heroes = [
   },
   {
     "id": 8,
-    "image": "/assets/hero.png",
+    "image": "assets/hero.png",
     "likeNumber": 1600,
     "rank": "Снайпер",
     "heroName": "Павличенко Людмила Михайловна",
@@ -182,20 +182,22 @@ addHeroButton.style.display = "inline-block"; // Показываем кнопк
 const inputImage = document.getElementById("hero-photo");
 const uploadStatus = document.getElementById("upload-status");
 
-inputImage.addEventListener("change", function () {
-  if (this.files.length > 1) {
-    uploadStatus.textContent = "Можно загрузить только одну фотографию!";
+function uploadImage() {
+  if (inputImage.files.length > 1) {
+    inputImage.textContent = "Можно загрузить только одну фотографию!";
     uploadStatus.style.color = "#C1001F";
-    this.value = ""; // Сбрасываем значение
-  } else if (this.files.length === 1) {
-    const fileName = this.files[0].name;
+    inputImage.value = ""; // Сбрасываем значение
+  } else if (inputImage.files.length === 1) {
+    const fileName = inputImage.files[0].name;
     uploadStatus.textContent = `Фотография "${fileName}" успешно загружена!`;
     uploadStatus.style.color = "green";
   } else {
     uploadStatus.innerHTML = "Перенесите файл сюда <br> или выберите файл с вашего устройства";
     uploadStatus.style.color = "#222222";
   }
-});
+}
+
+inputImage.addEventListener("change", uploadImage);
 
 const input = document.getElementById("hero-life");
 
@@ -212,3 +214,20 @@ input.addEventListener("keydown", function (e) {
     input.value = input.value.slice(0, -1); // Удаляем лишний "-" при удалении
   }
 });
+
+
+const dropArea = document.getElementById("drop-area");
+
+dropArea.addEventListener("dragover", function(e){
+  e.preventDefault();
+  dropArea.classList.add("dragover"); // Добавляем класс для стилизации
+});
+dropArea.addEventListener("dragleave", function() {
+  dropArea.classList.remove("dragover"); // Убираем класс
+});
+dropArea.addEventListener("drop", function(e){
+  e.preventDefault();
+  inputImage.files = e.dataTransfer.files;
+  uploadImage();
+  dropArea.classList.remove("dragover"); // Убираем класс
+})
