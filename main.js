@@ -1,4 +1,4 @@
-import heroes from '/data.js'; 
+const heroes = require('./data.js');
 
 // Контейнер для карточек
 const cardsContainer = document.getElementById('cards-container');
