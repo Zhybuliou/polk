@@ -11,9 +11,9 @@ const inputDateOfLife = document.getElementById("hero-life");
 const dropArea = document.getElementById("drop-area");
 const heroForm = document.getElementById('hero-form');
 const backButton = document.getElementById('button-back');
-const buttonFormSubmit = document.getElementById("hero-submit");
+const submitButton = document.getElementById("hero-submit");
 
-// Кнопка назад Fancybox
+// Кнопка назад Fancybox на модальном окне
 backButton.onclick = () => {
   backButton.blur()
   Fancybox.close();
@@ -34,8 +34,8 @@ const CardModule = (() => {
           <img class="hero-card__image" src="${hero.image}" alt="${hero.heroName}" data-id="${hero.id}">
         </div>
         <div class="hero-card__likes">
-          <img src="assets/card-icon.svg" alt="Георгиевская лента" class="hero-card__icon">
-          <p id="hero-show__likes">${hero.likeNumber}</p>
+          <img src="/assets/card-icon.svg" alt="Георгиевская лента" class="hero-card__icon">
+          <p id="hero-show__likes" class="hero-show__likes">${hero.likeNumber}</p>
         </div>
         <h3 class="hero-card__name">${nameHero}</h3>
         <p class="hero-card__sender">Отправитель: ${hero.sender}</p>
@@ -140,7 +140,7 @@ inputDateOfLife.addEventListener("keydown", function (e) {
   }
 });
 
-// Drag and Drop
+// Drag and Drop Image
 function handleDragOver(event) {
   event.preventDefault();
   dropArea.classList.add("dragover");
@@ -194,7 +194,7 @@ const FormModule = (() => {
   return { handleFormSubmission };
 })();
 
-buttonFormSubmit.addEventListener('click', (e) => {
+submitButton.addEventListener('click', (e) => {
   e.preventDefault();
   FormModule.handleFormSubmission(heroForm);
 });

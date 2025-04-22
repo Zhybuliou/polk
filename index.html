@@ -2,147 +2,121 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бессмертный полк 2025</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бессмертный полк 2025</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header class="page-header">
-        <div class="container page-header__container">
-            <!-- Логотип -->
-            <div class="page-header__logo">
-                <img src="assets/logo.png" alt="бессмерный полк 80лет победа!" class="page-header__logo-img">
-            </div>
-            <!-- Слоган -->
-            <p class="page-header__slogan">
-                Строй бессмертного полка
-            </p>
-            <!-- Навигация с кнопками -->
-            <nav class="page-header__nav">
-                <button type="button" id="gallery-button" class="button page-header__btn--gallery">
-                    Галерея
-                </button>
-                <button type="button" id="add-hero-button" class="button page-header__btn--add">
-                    Добавить героя
-                </button>
-            </nav>
-        </div>
-    </header>
-    
-    <div id="hero-form-section" class="hero-form">
-        <!-- Заголовок формы, выровненный по центру -->
-        <h2 class="hero-form__title">Форма анкеты героя</h2>
-      
-        <!-- Обёртка формы на белом фоне -->
-        <div class="hero-form__container">
-          <form id="hero-form" class="hero-form__form" action="#" method="post">
-            
-            <!-- Поле: Загрузите одну фотографию -->
-            <div class="hero-form__field-image">
-              <p class="hero-form__label-image-text">Загрузите одну фотографию</p>
-              <label id="drop-area" class="hero-form__label-image" for="hero-photo">
-                <img src="assets/log-in.svg" alt="Загрузите одну фотографию" class="hero-form__label-image__icon">
-                <p class="hero-form__label-image__text" id="upload-status">Перенесите файл сюда<br> или выберите файл с вашего устройства</p>
-              </label>
-              <input type="file" id="hero-photo" class="hero-form__input-image" accept="image/*">
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Поле: ФИО героя -->
-            <div class="hero-form__field">
-              <label class="hero-form__label" for="hero-name">ФИО героя</label>
-              <input type="text" id="hero-name" class="hero-form__input" placeholder="Исаев">
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Поле: Годы жизни -->
-            <div class="hero-form__field">
-              <label class="hero-form__label" for="hero-life">Годы жизни</label>
-              <input type="text" id="hero-life" class="hero-form__input" placeholder="1111-1111">
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Поле: Звание -->
-            <div class="hero-form__field">
-              <label class="hero-form__label" for="hero-rank">Звание</label>
-              <input type="text" id="hero-rank" class="hero-form__input">
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Поле: Степень родства отправителю -->
-            <div class="hero-form__field custom-select">
-              <label class="hero-form__label" for="hero-kinship">Степень родства отправителю</label>
-              <select id="hero-kinship" class="hero-form__input">
-                <option value="" disabled selected hidden></option>
-                <option value="Отец">Отец</option>
-                <option value="Мать">Мать</option>
-                <option value="Дядя">Дядя</option>
-                <option value="Тётя">Тётя</option>
-                <option value="Дедушка">Дедушка</option>
-                <option value="Бабушка">Бабушка</option>
-                <option value="Прадедушка">Прадедушка</option>
-                <option value="Прабабушка">Прабабушка</option>
-              </select>
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Поле: Отправитель -->
-            <div class="hero-form__field">
-              <label class="hero-form__label" for="hero-sender">Отправитель</label>
-              <input type="text" id="hero-sender" class="hero-form__input">
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Поле: Описание -->
-            <div class="hero-form__field">
-              <label class="hero-form__label" for="hero-description">Описание</label>
-              <textarea id="hero-description" class="hero-form__textarea" maxlength="1000"></textarea>
-              <p class="hero-form__error-message">Поле обязательно для заполнения</p>
-            </div>
-            
-            <!-- Нижняя область формы с информационным текстом и кнопкой -->
-            <div class="hero-form__bottom">
-              <p class="hero-form__info">
-                Нажимая на кнопку “Добавить героя” я соглашаюсь с политикой обработки данных и 
-                <a href="#" class="hero-form__link">политикой конфиденциальности</a>
-              </p>
-              <button type="submit" id="hero-submit" class="button hero-form__button">Добавить героя</button>
-            </div>
-            
-          </form>
-        </div>
-    </div>
-
-    <div id="heroes-section" class="heroes-section">
-        <h2 class="heroes-section__title">Строй Бессмертного полка</h2>
-        <div id="cards-container" class="cards-container"></div>
-    </div>
-
-    <div id="modal-content" class="modal-content" style="display: none;">
-        <button id="button-back" class="button-back">
-            <img src="./assets/arrow-up-right.svg" alt="назад">
-            Назад
+  <header class="page-header">
+    <div class="container page-header__container">
+      <div class="page-header__logo">
+        <img src="assets/logo.png" alt="бессмертный полк" class="page-header__logo-img">
+      </div>
+      <p class="page-header__slogan">
+        Строй бессмертного полка
+      </p>
+      <nav class="page-header__nav">
+        <button type="button" id="gallery-button" class="button page-header__btn--gallery">
+          Галерея
         </button>
-        <div class="modal__image-wrapper">
-            <img id="modal-image" class="modal-image" src="" alt="">
-            <div class="modal-image__likes">
-                <img src="/assets/card-icon.svg" alt="Георгиевская лента" class="hero-card__icon">
-                <p id="modal-image__likes"></p>
-            </div>
-        </div>
-        <p id="modal-rank" class="modal-rank"></p>
-        <p id="modal-name" class="modal-name"></p>
-        <p id="modal-date" class="modal-date"></p>
-        <p id="modal-relative" class="modal-relative"></p>
-        <p id="modal-sender" class="modal-sender"></p>
-        <p id="modal-description" class="modal-description"></p>
+        <button type="button" id="add-hero-button" class="button page-header__btn--add">
+          Добавить героя
+        </button>
+      </nav>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    <script type="module" src="main.js"></script>
+  </header>
+  <div id="hero-form-section" class="hero-form">
+    <h2 class="hero-form__title">Форма анкеты героя</h2>
+    <div class="hero-form__container">
+      <form id="hero-form" class="hero-form__form" action="#" method="post">
+        <div class="hero-form__field-image">
+          <p class="hero-form__label-image-text">Загрузите одну фотографию</p>
+          <label id="drop-area" class="hero-form__label-image" for="hero-photo">
+            <img src="assets/log-in.svg" alt="Загрузите одну фотографию" class="hero-form__label-image__icon">
+            <p class="hero-form__label-image__text" id="upload-status">Перенесите файл сюда<br> или выберите файл с
+              вашего устройства</p>
+          </label>
+          <input type="file" id="hero-photo" class="hero-form__input-image" accept="image/*">
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__field">
+          <label class="hero-form__label" for="hero-name">ФИО героя</label>
+          <input type="text" id="hero-name" class="hero-form__input" placeholder="Исаев">
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__field">
+          <label class="hero-form__label" for="hero-life">Годы жизни</label>
+          <input type="text" id="hero-life" class="hero-form__input" placeholder="1111-1111">
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__field">
+          <label class="hero-form__label" for="hero-rank">Звание</label>
+          <input type="text" id="hero-rank" class="hero-form__input">
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__field custom-select">
+          <label class="hero-form__label" for="hero-kinship">Степень родства отправителю</label>
+          <select id="hero-kinship" class="hero-form__input">
+            <option value="" disabled selected hidden></option>
+            <option value="Отец">Отец</option>
+            <option value="Мать">Мать</option>
+            <option value="Дядя">Дядя</option>
+            <option value="Тётя">Тётя</option>
+            <option value="Дедушка">Дедушка</option>
+            <option value="Бабушка">Бабушка</option>
+            <option value="Прадедушка">Прадедушка</option>
+            <option value="Прабабушка">Прабабушка</option>
+          </select>
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__field">
+          <label class="hero-form__label" for="hero-sender">Отправитель</label>
+          <input type="text" id="hero-sender" class="hero-form__input">
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__field">
+          <label class="hero-form__label" for="hero-description">Описание</label>
+          <textarea id="hero-description" class="hero-form__textarea" maxlength="1000"></textarea>
+          <p class="hero-form__error-message">Поле обязательно для заполнения</p>
+        </div>
+        <div class="hero-form__bottom">
+          <p class="hero-form__info">
+            Нажимая на кнопку “Добавить героя” я соглашаюсь с политикой обработки данных и
+            <a href="#" class="hero-form__link">политикой конфиденциальности</a>
+          </p>
+          <button type="submit" id="hero-submit" class="button hero-form__button">Добавить героя</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="heroes-section" class="heroes-section">
+    <h2 class="heroes-section__title">Строй Бессмертного полка</h2>
+    <div id="cards-container" class="cards-container"></div>
+  </div>
+  <div id="modal-content" class="modal-content" style="display: none;">
+    <button id="button-back" class="button-back">
+      <img src="/assets/arrow-up-right.svg" alt="назад">
+      Назад
+    </button>
+    <div class="modal-content__image-wrapper">
+      <img id="modal-image" class="modal-image" src="" alt="">
+      <div class="modal-content__likes">
+        <img src="/assets/card-icon.svg" alt="Георгиевская лента" class="hero-card__icon">
+        <p id="modal-image__likes"></p>
+      </div>
+    </div>
+    <p id="modal-rank" class="modal-rank"></p>
+    <p id="modal-name" class="modal-name"></p>
+    <p id="modal-date" class="modal-date"></p>
+    <p id="modal-relative" class="modal-relative"></p>
+    <p id="modal-sender" class="modal-sender"></p>
+    <p id="modal-description" class="modal-description"></p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
